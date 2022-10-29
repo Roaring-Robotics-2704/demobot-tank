@@ -7,12 +7,11 @@ import frc.robot.RobotContainer;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-
-public class DriveRobot extends CommandBase {
-  /** Creates a new DriveRobot. */
-  public DriveRobot() {
+public class Input extends CommandBase {
+  /** Creates a new Input. */
+  public Input() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.m_Drivetrain);
+    addRequirements(RobotContainer.m_Brush);
   }
 
   // Called when the command is initially scheduled.
@@ -21,12 +20,7 @@ public class DriveRobot extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    double joystickLeft = RobotContainer.xbox.getLeftY();
-    double joystickRight = RobotContainer.xbox.getRightY();
-
-    RobotContainer.m_Drivetrain.tankDrive(joystickLeft, joystickRight);
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override

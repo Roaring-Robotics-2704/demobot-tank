@@ -9,8 +9,11 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Brush;
 
 import frc.robot.commands.DriveRobot;
+import frc.robot.commands.Input;
+import frc.robot.commands.Output;
 
 
 /**
@@ -23,9 +26,12 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   //Subsystems
   public static Drivetrain m_Drivetrain = new Drivetrain();
+  public static Brush m_Brush = new Brush();
 
   //Commands
   public static DriveRobot m_DriveRobot = new DriveRobot();
+  public static Input m_Input = new Input();
+  public static Output m_Output = new Output();
 
   //OI
   public static XboxController xbox  = new XboxController(Constants.c_joystick);
