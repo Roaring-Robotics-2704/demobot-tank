@@ -3,13 +3,14 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class Output extends CommandBase {
-  /** Creates a new Output. */
-  public Output() {
+public class BrushCommand extends CommandBase {
+  /** Creates a new Input. */
+  public BrushCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.m_Brush);
   }
@@ -20,7 +21,9 @@ public class Output extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    RobotContainer.m_Brush.setspeed(RobotContainer.xbox.getRawAxis(Constants.RightTrigger)-RobotContainer.xbox.getRawAxis(Constants.LeftTrigger));
+  }
 
   // Called once the command ends or is interrupted.
   @Override

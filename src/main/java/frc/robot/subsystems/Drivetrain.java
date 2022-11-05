@@ -7,13 +7,15 @@ import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
+
 
 public class Drivetrain extends SubsystemBase {
   /** Creates a new Drivetrain. */
   //Drive Train Motors
-  private WPI_TalonSRX m_rightMotor = new WPI_TalonSRX (Constants.c_rightDriveMotor);
-  private WPI_TalonSRX m_leftMotor = new WPI_TalonSRX (Constants.c_leftDriveMotor);
+  private WPI_VictorSPX m_rightMotor = new WPI_VictorSPX(Constants.c_rightDriveMotor);
+  private WPI_VictorSPX m_leftMotor = new WPI_VictorSPX(Constants.c_leftDriveMotor);
 
   private DifferentialDrive drive = new DifferentialDrive(m_leftMotor, m_rightMotor);
 

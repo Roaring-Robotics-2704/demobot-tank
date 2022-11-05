@@ -14,7 +14,12 @@ package frc.robot;
  */
 public final class Constants {
 
+    public static final int RightTrigger = 2;
+    public static final int LeftTrigger = 3;
     public static int c_joystick = 0;
     public static int c_leftDriveMotor = 1;
     public static int c_rightDriveMotor = 2;
+    public static int c_leftJoystickAxis = 5;
+    public static int c_rightJoystickAxis = 1;
+    public static int c_brushMotor = 3;
 }
