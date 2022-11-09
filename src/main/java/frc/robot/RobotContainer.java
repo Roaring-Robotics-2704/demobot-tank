@@ -37,6 +37,8 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    //Is nessary, might have been the reason for the error "DifferntialDrive...Output not updated often enough"
+    m_Drivetrain.setDefaultCommand(m_DriveRobot);
   }
 
   /**

@@ -20,7 +20,6 @@ public class Drivetrain extends SubsystemBase {
   private DifferentialDrive drive = new DifferentialDrive(m_leftMotor, m_rightMotor);
 
   public Drivetrain() {
-
   }
 
   public void tankDrive(double leftSpeed, double rightSpeed){
