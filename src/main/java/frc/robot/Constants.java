@@ -16,6 +16,7 @@ public final class Constants {
 
     public static final int RightTrigger = 2;
     public static final int LeftTrigger = 3;
+	public static final double danceSpeed = 0.25;
 
     public static int c_joystick = 0;
 
