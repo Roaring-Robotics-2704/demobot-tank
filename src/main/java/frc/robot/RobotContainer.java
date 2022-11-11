@@ -27,7 +27,7 @@ public class RobotContainer {
 
   //Commands
   public static DriveRobot m_DriveRobot = new DriveRobot();
-  public static BrushCommand m_Input = new BrushCommand();
+  public static BrushCommand m_BrushCommand = new BrushCommand();
 
   //OI
   public static XboxController xbox  = new XboxController(Constants.c_joystick);
@@ -39,6 +39,7 @@ public class RobotContainer {
     configureButtonBindings();
     //Is nessary, might have been the reason for the error "DifferntialDrive...Output not updated often enough"
     m_Drivetrain.setDefaultCommand(m_DriveRobot);
+    m_Brush.setDefaultCommand(m_BrushCommand);
   }
 
   /**
