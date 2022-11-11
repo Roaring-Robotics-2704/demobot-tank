@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -22,8 +23,8 @@ public class DriveRobot extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double joystickLeft = RobotContainer.xbox.getLeftY();
-    double joystickRight = RobotContainer.xbox.getRightY();
+    double joystickLeft = RobotContainer.xbox.getRawAxis(1);
+    double joystickRight = RobotContainer.xbox.getRawAxis(5);
 
     RobotContainer.m_Drivetrain.tankDrive(joystickLeft, joystickRight);
   }
