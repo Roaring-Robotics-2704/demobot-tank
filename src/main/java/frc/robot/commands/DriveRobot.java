@@ -5,7 +5,8 @@
 package frc.robot.commands;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
-
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 
@@ -15,10 +16,13 @@ public class DriveRobot extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.m_Drivetrain);
   }
-
+  Timer danceTime = new Timer();
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    danceTime.reset();
+    danceTime.start();
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
@@ -26,7 +30,31 @@ public class DriveRobot extends CommandBase {
     double joystickLeft = RobotContainer.xbox.getRawAxis(1);
     double joystickRight = RobotContainer.xbox.getRawAxis(5);
 
+    double joystickTotal = Math.abs(joystickLeft)+Math.abs(joystickRight);
+    SmartDashboard.putNumber("joystickTotal",joystickTotal);
+
+    double timerValue = danceTime.get();
+    SmartDashboard.putNumber("timerValue",timerValue);
+
+    double timerRemainder = Math.IEEEremainder(timerValue,1);
+    SmartDashboard.putNumber("timerRemainder",timerRemainder);
+
+    double danceSpeed = 0.25;
+    if(joystickTotal<0.05){
+      if(timerRemainder<0){ //every half a second, switch modes
+        joystickLeft = danceSpeed;
+        joystickRight = -danceSpeed;
+      }
+      else{
+        joystickLeft = -danceSpeed;
+        joystickRight = danceSpeed;
+      }
+    }
+    SmartDashboard.putNumber("joystickLeft", joystickLeft);
+    SmartDashboard.putNumber("joystickRight", joystickRight);
+
     RobotContainer.m_Drivetrain.tankDrive(joystickLeft, joystickRight);
+
   }
 
   // Called once the command ends or is interrupted.
