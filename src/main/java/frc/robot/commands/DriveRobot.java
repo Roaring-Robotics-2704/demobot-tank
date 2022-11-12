@@ -27,8 +27,8 @@ public class DriveRobot extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double joystickLeft = RobotContainer.xbox.getRawAxis(1);
-    double joystickRight = RobotContainer.xbox.getRawAxis(5);
+    double joystickLeft = RobotContainer.xbox.getRawAxis(Constants.c_leftJoystickAxis);
+    double joystickRight = RobotContainer.xbox.getRawAxis(Constants.c_rightJoystickAxis);
 
     double joystickTotal = Math.abs(joystickLeft)+Math.abs(joystickRight);
     SmartDashboard.putNumber("joystickTotal",joystickTotal);
