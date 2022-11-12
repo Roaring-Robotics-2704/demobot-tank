@@ -7,10 +7,10 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Brush;
+
 
 import frc.robot.commands.DriveRobot;
-import frc.robot.commands.BrushCommand;
+
 
 
 /**
@@ -23,11 +23,11 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   //Subsystems
   public static Drivetrain m_Drivetrain = new Drivetrain();
-  public static Brush m_Brush = new Brush();
+
 
   //Commands
   public static DriveRobot m_DriveRobot = new DriveRobot();
-  public static BrushCommand m_BrushCommand = new BrushCommand();
+
 
   //OI
   public static XboxController xbox  = new XboxController(Constants.c_joystick);
@@ -39,7 +39,7 @@ public class RobotContainer {
     configureButtonBindings();
     //Is nessary, might have been the reason for the error "DifferntialDrive...Output not updated often enough"
     m_Drivetrain.setDefaultCommand(m_DriveRobot);
-    m_Brush.setDefaultCommand(m_BrushCommand);
+ 
   }
 
   /**

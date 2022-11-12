@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 
-
 public class DriveRobot extends CommandBase {
   /** Creates a new DriveRobot. */
   public DriveRobot() {
@@ -20,8 +19,7 @@ public class DriveRobot extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    danceTime.reset();
-    danceTime.start();
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -33,27 +31,14 @@ public class DriveRobot extends CommandBase {
     double joystickTotal = Math.abs(joystickLeft)+Math.abs(joystickRight);
     SmartDashboard.putNumber("joystickTotal",joystickTotal);
 
-    double timerValue = danceTime.get();
-    SmartDashboard.putNumber("timerValue",timerValue);
 
-    double timerRemainder = Math.IEEEremainder(timerValue,1);
-    SmartDashboard.putNumber("timerRemainder",timerRemainder);
-
-    double danceSpeed = Constants.danceSpeed;
-    if(joystickTotal<0.05){
-      if(timerRemainder<0){ //every half a second, switch modes
-        joystickLeft = danceSpeed;
-        joystickRight = -danceSpeed;
-      }
-      else{
-        joystickLeft = -danceSpeed;
-        joystickRight = danceSpeed;
-      }
-    }
     SmartDashboard.putNumber("joystickLeft", joystickLeft);
     SmartDashboard.putNumber("joystickRight", joystickRight);
+    SmartDashboard.putNumber("left speed", -joystickLeft*Constants.c_speedcap);
+    SmartDashboard.putNumber("right speed", -joystickRight*Constants.c_speedcap);
 
-    RobotContainer.m_Drivetrain.tankDrive(joystickLeft, joystickRight);
+    
+    RobotContainer.m_Drivetrain.tankDrive(-joystickLeft*Constants.c_speedcap, -joystickRight*Constants.c_speedcap);
 
   }
 

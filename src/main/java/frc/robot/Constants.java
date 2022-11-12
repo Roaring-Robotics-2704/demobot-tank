@@ -14,17 +14,15 @@ package frc.robot;
  */
 public final class Constants {
 
-    public static final int RightTrigger = 2;
-    public static final int LeftTrigger = 3;
-	public static final double danceSpeed = 0.25;
-
     public static int c_joystick = 0;
 
-    public static int c_leftDriveMotor = 2;
-    public static int c_rightDriveMotor = 1;
+    public static int c_frontleftDriveMotor = 4;
+    public static int c_frontrightDriveMotor = 2;
+    public static int c_backleftDriveMotor = 3;
+    public static int c_backrightDriveMotor = 1;
 
-    public static int c_leftJoystickAxis = 5;
-    public static int c_rightJoystickAxis = 1;
-
-    public static int c_brushMotor = 3;
+    public static int c_leftJoystickAxis = 1;
+    public static int c_rightJoystickAxis = 5;
+    
+    public static double c_speedcap = 0.80;//0.75 speed is good. y of xbox times this number.
 }
