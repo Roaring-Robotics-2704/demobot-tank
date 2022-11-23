@@ -22,7 +22,7 @@ public final class Constants {
     public static int c_backrightDriveMotor = 1;
 
     public static int c_leftJoystickAxis = 1;
-    public static int c_rightJoystickAxis = 5;
+    public static int c_rightJoystickAxis = 3;
     
-    public static double c_speedcap = 0.80;//0.75 speed is good. y of xbox times this number.
+    public static double c_speedcap = 0.75;//0.75 speed is good. y of xbox times this number.
 }

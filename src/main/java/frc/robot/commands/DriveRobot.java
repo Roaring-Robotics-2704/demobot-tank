@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
@@ -30,7 +31,12 @@ public class DriveRobot extends CommandBase {
 
     double joystickTotal = Math.abs(joystickLeft)+Math.abs(joystickRight);
     SmartDashboard.putNumber("joystickTotal",joystickTotal);
+    
+    double outputLeft = -joystickLeft*Constants.c_speedcap;
+    double outputRight = -joystickRight*Constants.c_speedcap;
 
+    RobotContainer.xbox.setRumble(RumbleType.kLeftRumble, outputLeft);
+    RobotContainer.xbox.setRumble(RumbleType.kLeftRumble, outputRight);
 
     SmartDashboard.putNumber("joystickLeft", joystickLeft);
     SmartDashboard.putNumber("joystickRight", joystickRight);
@@ -38,7 +44,7 @@ public class DriveRobot extends CommandBase {
     SmartDashboard.putNumber("right speed", -joystickRight*Constants.c_speedcap);
 
     
-    RobotContainer.m_Drivetrain.tankDrive(-joystickLeft*Constants.c_speedcap, -joystickRight*Constants.c_speedcap);
+    RobotContainer.m_Drivetrain.tankDrive(outputLeft, outputRight);
 
   }
 
