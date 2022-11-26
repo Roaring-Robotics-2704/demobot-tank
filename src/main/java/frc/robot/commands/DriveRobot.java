@@ -3,7 +3,10 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
+<<<<<<< Updated upstream
 import edu.wpi.first.wpilibj.Timer;
+=======
+>>>>>>> Stashed changes
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
@@ -15,7 +18,7 @@ public class DriveRobot extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.m_Drivetrain);
   }
-  Timer danceTime = new Timer();
+
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
@@ -31,6 +34,10 @@ public class DriveRobot extends CommandBase {
     double joystickTotal = Math.abs(joystickLeft)+Math.abs(joystickRight);
     SmartDashboard.putNumber("joystickTotal",joystickTotal);
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
     SmartDashboard.putNumber("joystickLeft", joystickLeft);
     SmartDashboard.putNumber("joystickRight", joystickRight);
@@ -41,6 +48,7 @@ public class DriveRobot extends CommandBase {
     RobotContainer.m_Drivetrain.tankDrive(-joystickLeft*Constants.c_speedcap, -joystickRight*Constants.c_speedcap);
 
   }
+
 
   // Called once the command ends or is interrupted.
   @Override

@@ -7,8 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.subsystems.Drivetrain;
-
-
+import frc.robot.subsystems.elevator;
 import frc.robot.commands.DriveRobot;
 
 
@@ -24,7 +23,7 @@ public class RobotContainer {
   //Subsystems
   public static Drivetrain m_Drivetrain = new Drivetrain();
 
-
+public static elevator m_elevator = new elevator(15);
   //Commands
   public static DriveRobot m_DriveRobot = new DriveRobot();
 
