@@ -3,10 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
-<<<<<<< Updated upstream
-import edu.wpi.first.wpilibj.Timer;
-=======
->>>>>>> Stashed changes
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
@@ -33,11 +30,10 @@ public class DriveRobot extends CommandBase {
 
     double joystickTotal = Math.abs(joystickLeft)+Math.abs(joystickRight);
     SmartDashboard.putNumber("joystickTotal",joystickTotal);
+    
+    double outputLeft = -joystickLeft*Constants.c_speedcap;
+    double outputRight = -joystickRight*Constants.c_speedcap;
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
     SmartDashboard.putNumber("joystickLeft", joystickLeft);
     SmartDashboard.putNumber("joystickRight", joystickRight);
@@ -45,7 +41,7 @@ public class DriveRobot extends CommandBase {
     SmartDashboard.putNumber("right speed", -joystickRight*Constants.c_speedcap);
 
     
-    RobotContainer.m_Drivetrain.tankDrive(-joystickLeft*Constants.c_speedcap, -joystickRight*Constants.c_speedcap);
+    RobotContainer.m_Drivetrain.tankDrive(outputLeft, outputRight);
 
   }
 
