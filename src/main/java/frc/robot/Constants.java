@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.DigitalSource;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -14,13 +16,25 @@ package frc.robot;
  */
 public final class Constants {
 
+
+public final class drivemotor {
+    public static final int c_frontleftDriveMotor = 4;
+    public static final int c_frontrightDriveMotor = 2;
+    public static final int c_backleftDriveMotor = 3;
+    public static final int c_backrightDriveMotor = 1;
+}
+public final class pid {
+    public static final double pgain = 0;
+    public static final double igain = 0;
+    public static final double dgain = 0;
+}
+
     public static int c_joystick = 0;
 
-    public static int c_frontleftDriveMotor = 4;
-    public static int c_frontrightDriveMotor = 2;
-    public static int c_backleftDriveMotor = 3;
-    public static int c_backrightDriveMotor = 1;
-
+    
+    public static final int c_elevatorMotor = 0;
+    public static final DigitalSource encoderpin1 = null;
+    public static final DigitalSource encoderpin2 = null;
     public static int c_leftJoystickAxis = 1;
     public static int c_rightJoystickAxis = 3;
     

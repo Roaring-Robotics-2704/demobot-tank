@@ -16,16 +16,16 @@ import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 public class Drivetrain extends SubsystemBase {
   /** Creates a new Drivetrain. */
   //Drive Train Motors
-  private WPI_TalonSRX m_frontrightMotor = new WPI_TalonSRX(Constants.c_frontrightDriveMotor);
+  private WPI_TalonSRX m_frontrightMotor = new WPI_TalonSRX(Constants.drivemotor.c_frontrightDriveMotor);
   
   
-  private WPI_TalonSRX m_backrightMotor = new WPI_TalonSRX(Constants.c_backrightDriveMotor);
+  private WPI_TalonSRX m_backrightMotor = new WPI_TalonSRX(Constants.drivemotor.c_backrightDriveMotor);
   
   
-  private WPI_VictorSPX m_frontleftMotor = new WPI_VictorSPX(Constants.c_frontleftDriveMotor);
+  private WPI_VictorSPX m_frontleftMotor = new WPI_VictorSPX(Constants.drivemotor.c_frontleftDriveMotor);
   
   
-  private WPI_VictorSPX m_backleftMotor = new WPI_VictorSPX(Constants.c_backleftDriveMotor);
+  private WPI_VictorSPX m_backleftMotor = new WPI_VictorSPX(Constants.drivemotor.c_backleftDriveMotor);
   
 MotorControllerGroup m_right = new MotorControllerGroup(m_frontrightMotor, m_backrightMotor);
 MotorControllerGroup m_left = new MotorControllerGroup(m_frontleftMotor, m_backleftMotor);
